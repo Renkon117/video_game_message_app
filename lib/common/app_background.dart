@@ -24,6 +24,30 @@ class AppBackground extends StatelessWidget {
                     shape: BoxShape.circle, color: firstCircleColor),
               ),
             ),
+            Positioned(
+              left: width * 0.15,
+              top: -width * 0.7,
+              child: Container(
+                height: width * 1.5,
+                width: width * 1.6,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: secondCircleColor,
+                ),
+              ),
+            ),
+            Positioned(
+              right: -width * 0.2,
+              top: -100,
+              child: Container(
+                height: width * 0.6,
+                width: width * 0.6,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: thirdCircleColor,
+                ),
+              ),
+            ),
           ],
         );
       },
