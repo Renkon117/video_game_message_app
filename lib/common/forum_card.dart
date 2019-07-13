@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:video_game_message_app/model/forum.dart';
 
+import 'forum_name_widget.dart';
+
 class ForumCard extends StatelessWidget {
   //get Forum from Forum.dart
   final Forum forum;
@@ -17,14 +19,22 @@ class ForumCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
-        child: Stack(
-          children: <Widget>[
-            Image.asset(
-              forum.imagePath,
-              width: 280.0,
-              fit: BoxFit.fitWidth,
-            ),
-          ],
+        child: ClipRRect(
+          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+          child: Stack(
+            children: <Widget>[
+              Image.asset(
+                forum.imagePath,
+                width: 280,
+                fit: BoxFit.fitWidth,
+              ),
+              Positioned(
+                left: 0,
+                bottom: 50.0,
+                child: ForumNameWidget(forum: forum),
+              ),
+            ],
+          ),
         ),
       ),
     );
