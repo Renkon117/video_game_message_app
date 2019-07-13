@@ -6,6 +6,7 @@ class ForumCard extends StatelessWidget {
   final Forum forum;
 //created constructor to take form key in ForumCard() it needs parameter when it's called
   ForumCard({this.forum});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,14 +17,15 @@ class ForumCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
-        // child: Stack(
-        //   children: <Widget>[
-        //     Image.asset(
-        //       forum.imagePath,
-        //       width: 280.0,
-        //     ),
-        //   ],
-        // ),
+        child: Stack(
+          children: <Widget>[
+            Image.asset(
+              forum.imagePath,
+              width: 280.0,
+              fit: BoxFit.fitWidth,
+            ),
+          ],
+        ),
       ),
     );
   }
